@@ -50,11 +50,13 @@ vim.keymap.set("v","<leader>x",":lua<CR>")
 vim.keymap.set("v","<leader>y","\"+y")
 vim.keymap.set("v","<leader>p","\"+p")
 vim.keymap.set("n","<leader>p","\"+p")
+vim.keymap.set("n","<leader>l",":LspStop<Cr>")
 vim.keymap.set("n","<leader>s",
 function ()
-	vim.cmd('!tmux send-keys -t config:term "sesh" C-m')
+	vim.api.nvim_command("execute \"!sn\"")
 end
 )
+vim.keymap.set("n","<C-z>",":echo 'nop'<CR>")
 
 vim.api.nvim_create_autocmd('TextYankPost',{
 	desc ='highlight when yanking text',

@@ -13,11 +13,6 @@ function()
 end,
 {})
 
-vim.api.nvim_create_user_command('D',
-function()
-	vim.api.nvim_command('!cmd.exe /C start %:t:r'..'.pdf')
-end,
-{nargs = '*'})
 vim.api.nvim_create_user_command('Lbe',
 function(opts)
 	vim.cmd('execute\"normal o\"')
@@ -43,6 +38,11 @@ function(opts)
 	end
 end,
 {nargs = '*'})
+vim.api.nvim_create_user_command('D',
+function()
+	vim.api.nvim_command('!cmd.exe /C start %:t:r'..'.pdf')
+end,
+{nargs = '*'})
 vim.api.nvim_create_user_command('C',
 function()
 	vim.api.nvim_command('!pdflatex %:t')
@@ -53,3 +53,4 @@ function ()
 	vim.api.nvim_command('!pdflatex %:t')
 end}
 )
+

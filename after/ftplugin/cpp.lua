@@ -13,7 +13,7 @@ function(opts)
 	vim.cmd.vnew()
 	vim.cmd.term()
 	vim.cmd.wincmd("J")
-	vim.api.nvim_win_set_height(0,5)
+	vim.api.nvim_win_set_height(0,8)
 	local job_id = vim.bo.channel
 
 	if (opts.fargs[1] ==nil) then

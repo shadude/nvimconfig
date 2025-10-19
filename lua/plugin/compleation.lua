@@ -8,6 +8,10 @@ return{
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
+			enabled = function ()
+				local file = vim.bo.filetype
+				return not vim.tbl_contains({"rust","text"},file)
+			end,
 			keymap = { preset = 'default' },
 
 			appearance = {

@@ -11,8 +11,8 @@ vim.api.nvim_create_user_command('Ct',function(opts)
 	vim.cmd.vnew()
 	vim.cmd.term()
 	vim.cmd.wincmd("J")
-	vim.api.nvim_win_set_height(0,5)
-	job_id = vim.bo.channel
+	vim.api.nvim_win_set_height(0,8)
+	local job_id = vim.bo.channel
 	vim.fn.chansend(job_id,{"cargo run\n"})
 	vim.cmd('execute\"normal\\ A\"')
 end,
